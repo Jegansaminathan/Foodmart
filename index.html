@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOOD MART</title>
+    <link rel="stylesheet" href="./style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <header>
+      <img src="./img/logo.png" />
+      <div id="search">
+        <select name="\" id="Categories_drop">
+          <option selected disabled class="op1">
+            <span>All Categories</span>
+          </option>
+          <option value="1">Groceries</option>
+          <option value="2">Drinks</option>
+          <option value="3">chocolates</option>
+        </select>
+        <input  id="sfeild" type="text" placeholder="Search for the items you like" />
+        <i class="fa-solid fa-magnifying-glass"></i>
+      </div>
+      <div id="head_support">
+        <p>For Support?</p>
+        <h2>+980-34984089</h2>
+      </div>
+      <div id="head_icon">
+        <div class="circle">
+          <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="circle">
+          <i class="fa-regular fa-heart"></i>
+        </div>
+      </div>
+      <div>
+        <p>Your Cart <i class="fa-solid fa-caret-down"></i></p>
+        <h2>$1290.00</h2>
+      </div>
+    </header>
+    <nav>
+      <div class="drdbox">
+      <button onclick="funclick()">
+        <span>Shop by Departments</span
+        ><span><i class="fa-solid fa-caret-down"></i></span>
+      </button>
+      <div class="dropdown" style="display: none;">
+        <p onclick="funupd(this)">Groceries</p>
+        <p onclick="funupd(this)">Drinks</p>
+        <p onclick="funupd(this)">chocolates</p>
+      </div>
+      </div>
+      <div>Women</div>
+      <div>Men</div>
+      <div>Kids</div>
+      <div>Accessories</div>
+      <div>Pages</div>
+      <div>Brand</div>
+      <div>Sale</div>
+      <div>Blog</div>
+    </nav>
+    <div class="banner">
+      <div class="rb">
+        <!-- <div class="rb1">100% natural</div>
+        <h3 class="rb2">Fresh Smoothie &amp; Summer Juice</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p> -->
+        <img class="ma1" src="./img/m2.png">
+        <img class="ma2" src="./img/m1p.png">
+        <img  class="mam" src="./img/product-thumb-1.png">
+      </div>
+      <div class="lb1">
+      </div>
+      <div class="lb2">
+
+      </div>
+      
+    </div>
+  </body>
+  <script>
+    let dtnr=document.querySelector(".drdbox button span")
+    let funclick=()=>{
+      let dropr=document.querySelector(".drdbox .dropdown")
+      if(dropr.style.display=='none'){
+        dropr.style.display='flex'
+      }
+      else{
+       dropr.style.display='none' 
+      }
+    }
+    let funupd=(el)=>{
+      dtnr.innerHTML=el.innerHTML
+    }
+  </script>
+</html>
