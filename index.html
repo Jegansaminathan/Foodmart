@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FOOD MART</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -25,7 +25,11 @@
           <option value="2">Drinks</option>
           <option value="3">chocolates</option>
         </select>
-        <input  id="sfeild" type="text" placeholder="Search for the items you like" />
+        <input
+          id="sfeild"
+          type="text"
+          placeholder="Search for the items you like"
+        />
         <i class="fa-solid fa-magnifying-glass"></i>
       </div>
       <div id="head_support">
@@ -47,15 +51,15 @@
     </header>
     <nav>
       <div class="drdbox">
-      <button onclick="funclick()">
-        <span>Shop by Departments</span
-        ><span><i class="fa-solid fa-caret-down"></i></span>
-      </button>
-      <div class="dropdown" style="display: none;">
-        <p onclick="funupd(this)">Groceries</p>
-        <p onclick="funupd(this)">Drinks</p>
-        <p onclick="funupd(this)">chocolates</p>
-      </div>
+        <button onclick="funclick()">
+          <span>Shop by Departments</span
+          ><span><i class="fa-solid fa-caret-down"></i></span>
+        </button>
+        <div class="dropdown" style="display: none">
+          <p onclick="funupd(this)">Groceries</p>
+          <p onclick="funupd(this)">Drinks</p>
+          <p onclick="funupd(this)">chocolates</p>
+        </div>
       </div>
       <div>Women</div>
       <div>Men</div>
@@ -68,34 +72,87 @@
     </nav>
     <div class="banner">
       <div class="rb">
-        <!-- <div class="rb1">100% natural</div>
-        <h3 class="rb2">Fresh Smoothie &amp; Summer Juice</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim massa diam elementum.</p> -->
-        <img class="ma1" src="./img/m2.png">
-        <img class="ma2" src="./img/m1p.png">
-        <img  class="mam" src="./img/product-thumb-1.png">
+        <div class="rbtx">
+          <div class="rb1">100% natural</div>
+          <h3 class="rb2">Fresh Smoothie &amp; Summer Juice</h3>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Dignissim
+            massa diam elementum.
+          </p>
+        </div>
+        <img class="ma1" src="./img/m2.png" />
+        <img class="ma2" src="./img/m1p.png" />
+        <img class="mam" src="./img/product-thumb-1.png" />
+        <p>
+          <i onclick="funbb(0)" class="fa-solid fa-circle"></i>
+          <i onclick="funbb(1)" class="fa-regular fa-circle"></i>
+        </p>
       </div>
-      <div class="lb1">
-      </div>
-      <div class="lb2">
-
-      </div>
-      
+      <div class="lb1"></div>
+      <div class="lb2"></div>
     </div>
   </body>
   <script>
-    let dtnr=document.querySelector(".drdbox button span")
-    let funclick=()=>{
-      let dropr=document.querySelector(".drdbox .dropdown")
-      if(dropr.style.display=='none'){
-        dropr.style.display='flex'
+    let dtnr = document.querySelector(".drdbox button span");
+    let funclick = () => {
+      let dropr = document.querySelector(".drdbox .dropdown");
+      if (dropr.style.display == "none") {
+        dropr.style.display = "flex";
+      } else {
+        dropr.style.display = "none";
       }
-      else{
-       dropr.style.display='none' 
-      }
+    };
+    let funupd = (el) => {
+      dtnr.innerHTML = el.innerHTML;
+    };
+    let imgr = document.querySelectorAll(".rb img");
+    let arr = [
+      {
+        img1: "./img/m2.png",
+        img2: "./img/m1p.png",
+        img3: "./img/product-thumb-1.png",
+      },
+      {
+        img1: "./img/cho1.png",
+        img2: "./img/cho2.png",
+        img3: "./img/Screenshot 2025-11-05 122141.png",
+      },
+    ];
+    let i = 0;
+    let cir=document.querySelectorAll(".rb p i")
+    let fwd = () => {
+      cir[i].className='fa-regular fa-circle'
+      i++;
+      i = i % arr.length;
+      cir[i].className='fa-solid fa-circle'
+      imgr[0].src = arr[i].img1;
+      imgr[1].src = arr[i].img2;
+      imgr[2].src = arr[i].img3;
+      imgr[0].className='ma1 spa'
+      imgr[1].className='ma2 spa'
+      imgr[2].className='mam pop'
+      let def=()=>{ imgr[0].className='ma1'
+      imgr[1].className='ma2'
+      imgr[2].className='mam'}
+      setTimeout(def,3000)
+      
+    };
+    setInterval(fwd,10000);
+    let funbb=(e)=>{
+      cir[i].className='fa-regular fa-circle'
+      i=e
+      imgr[0].src = arr[e].img1;
+      imgr[1].src = arr[e].img2;
+      imgr[2].src = arr[e].img3;
+      imgr[0].className='ma1 spa'
+      imgr[1].className='ma2 spa'
+      imgr[2].className='mam pop'
+      let def=()=>{ imgr[0].className='ma1'
+      imgr[1].className='ma2'
+      imgr[2].className='mam'}
+      setTimeout(def,3000)
+      cir[e].className='fa-solid fa-circle'
     }
-    let funupd=(el)=>{
-      dtnr.innerHTML=el.innerHTML
-    }
+
   </script>
 </html>

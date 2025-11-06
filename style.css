@@ -125,18 +125,22 @@ nav .drdbox {
   flex-direction: column;
   top: 100%;
   left: 0%;
+  z-index: 1;
+  border-radius: 20px;
+  overflow: hidden;
 }
 .drdbox .dropdown p {
   width: 100%;
   height: 100%;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  vertical-align: middle;
 }
 .drdbox .dropdown p:hover {
   background-color: beige;
 }
-.banner{
+.banner {
   width: 100%;
   height: 98vh;
   background-color: beige;
@@ -145,7 +149,7 @@ nav .drdbox {
   display: grid;
   gap: 30px;
 }
-.rb{
+.rb {
   width: 100%;
   height: 100%;
   background-color: chocolate;
@@ -156,54 +160,82 @@ nav .drdbox {
   position: relative;
   overflow: hidden;
 }
-.lb1,.lb2{
+.lb1,
+.lb2 {
   width: 100%;
   height: 100%;
   background-color: cadetblue;
   grid-column: 2/3;
   border-radius: 15px;
 }
-.lb1{
-  grid-row:1/2;
+.lb1 {
+  grid-row: 1/2;
 }
-.lb2{
+.lb2 {
   grid-row: 2/3;
 }
-.rb .mam{
+.rb .mam {
   position: absolute;
-  width: 300px;
-  right:15%;
+  width: 40%;
+  right: 12%;
   top: 6%;
+}
+.rb .pop{
   animation: pop 2s linear;
 }
-.rb .ma1,.rb .ma2{
+.rb .ma1,
+.rb .ma2 {
   position: absolute;
-  width: 200px;
+  width: 30%;
+}
+.rb .spa{
   animation: spn 2s linear;
 }
-.rb .ma1{
+.rb .ma1 {
   top: 6%;
   left: 4%;
 }
-.rb .ma2{
+.rb .ma2 {
   top: 70%;
   right: 3%;
 }
-@keyframes spn{ 
-  0%{
+@keyframes spn {
+  0% {
     transform: scale(0);
   }
-  50%{
+  50% {
     transform: scale(0);
   }
 }
-@keyframes pop{
-  0%{
+@keyframes pop {
+  0% {
     transform: scale(0.1);
     top: 100%;
   }
 }
-.rb .ma1{
-  position: absolute; 
+.rb .ma1 {
+  position: absolute;
   background-color: transparent;
+}
+.rb .rbtx {
+  width: 55%;
+  height: 50%;
+  position: absolute;
+  top: 35%;
+  left: 5%;
+  display: flex;
+  flex-direction: column;
+  gap: 18%;
+  font-size: larger;
+}
+.rb .rbtx div,
+h3 {
+  width: 70%;
+  font-size: xx-large;
+}
+.rb>p{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
 }
